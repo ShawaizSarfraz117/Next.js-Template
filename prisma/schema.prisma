@@ -284,15 +284,7 @@ model SurveyTemplate {
   SurveyAnswers      SurveyAnswers[]
 }
 
-model sysdiagrams {
-  name         String @db.NVarChar(128)
-  principal_id Int
-  diagram_id   Int    @id(map: "PK__sysdiagr__C2B05B610A67E8C9") @default(autoincrement())
-  version      Int?
-  definition   Bytes?
 
-  @@unique([principal_id, name], map: "UK_principal_name")
-}
 
 model Tag {
   id             String           @id(map: "PK__Tag__3213E83FFA70F600") @default(dbgenerated("newid()"), map: "DF__Tag__id__2A0C1F93") @db.UniqueIdentifier
